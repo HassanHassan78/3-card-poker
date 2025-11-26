@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="WelcomeController" spacing="10" alignment="CENTER" prefWidth="400" prefHeight="300">
+    <Label text="Welcome to 3 Card Poker ♥♦♣♠"/>
+    <Label text="Server IP:"/>
+    <TextField fx:id="ipField" text="127.0.0.1"/>
+    <Label text="Port:"/>
+    <TextField fx:id="portField" text="5555"/>
+    <Button text="Connect" onAction="#connectPressed"/>
+    <Label fx:id="statusLabel" text=""/>
+</VBox>

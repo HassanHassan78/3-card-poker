@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="GameController">
+    <top>
+        <Label text="3 card poker" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <HBox spacing="40" alignment="CENTER">
+                <VBox spacing="5" alignment="CENTER">
+                    <Label text="Player Cards"/>
+                    <HBox fx:id="playerCardsBox" spacing="10"/>
+                </VBox>
+
+                <VBox spacing="5" alignment="CENTER">
+                    <Label text="Dealer Cards"/>
+                    <HBox fx:id="dealerCardsBox" spacing="10"/>
+                </VBox>
+            </HBox>
+
+            <GridPane hgap="10" vgap="8">
+                <Label text="Ante:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="anteField" promptText="5-25" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Pair Plus:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="pairPlusField" promptText="0 or 5–25" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Button text="Place Bets / Deal" onAction="#onDeal" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Play" onAction="#onPlay"/>
+                <Button text="Fold" onAction="#onFold"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Total Winnings:"/>
+                <Label fx:id="totalWinningsLabel" text="0"/>
+            </HBox>
+
+            <TextArea fx:id="gameInfoArea" prefRowCount="5" editable="false" wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>
